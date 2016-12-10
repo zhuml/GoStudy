@@ -1,0 +1,1 @@
+windows下：os.Args参数获取包括应用程序名称，linux待测试
