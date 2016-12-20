@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	mapFun()
+	closeMethod()
 }
 
 //第一个GO程序
@@ -97,4 +97,35 @@ func mapFun() {
 	} else {
 		fmt.Println("Did not find person with ID 12345.")
 	}
+}
+
+//if
+func ifFun(i int) (j int) {
+	if i > 0 {
+		j = i
+	} else {
+		j = -i
+	}
+	return j
+}
+
+//不定参数方法
+func methodFun(args ...int) {
+	for _, arg := range args {
+		fmt.Println(arg)
+	}
+}
+
+//闭包函数
+func closeMethod() {
+	var j int = 5
+	a := func() func() {
+		var i int = 10
+		return func() {
+			fmt.Printf("i, j: %d, %d\n", i, j)
+		}
+	}()
+	a()
+	j *= 2
+	a()
 }
